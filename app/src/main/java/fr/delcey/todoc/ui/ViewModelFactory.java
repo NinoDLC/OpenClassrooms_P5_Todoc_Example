@@ -18,7 +18,7 @@ import fr.delcey.todoc.utils.ThreadSleeper;
 
 public class ViewModelFactory implements ViewModelProvider.Factory {
 
-    private static ViewModelFactory factory;
+    private static volatile ViewModelFactory factory;
 
     private final Executor mainThreadExecutor = new MainThreadExecutor();
     private final Executor ioExecutor = Executors.newFixedThreadPool(4);
